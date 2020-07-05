@@ -4,7 +4,6 @@ const products = fetch('https://corebiz-test.herokuapp.com/api/v1/products')
 .then(response => response.json())
 .then(data => {
   injectProducts(data);
-  console.log(data)
 })
 .catch(error => console.log(error));
 
@@ -25,23 +24,36 @@ const injectProducts = (data) => {
                     <i class="far fa-star"></i>
                 </div>
                 <p class="price">por R$ ${product.price}</p>
-                <p class="quantity">ou em x de R$</p>
+                <p class="quantity">ou em 9x de R$ 28,87</p>
                 <button class="btn-buy">COMPRAR</button>
             </div>
         `
 
         // Agregando al carrito de compras
 
-        var totalProducts = document.querySelector(".cart-number"),
-        count = 0;
+        var totalProducts = document.querySelector(".cart-number")
+        var count = 0;
 
         document.querySelectorAll(".btn-buy").forEach(button => {
 
             button.addEventListener("click", (e) => {
                 count += 1;
-                totalProducts.innerHTML = " " + count;              
+                totalProducts.innerHTML = " " + count;
+                sessionStorage.setItem('products', count);
             });
         });
     })
 
 }
+
+/* Manteniendo Productos despues de recargar la pagina */
+
+const saveProducts = () => {
+
+    var totalProducts = document.querySelector(".cart-number")
+    totalProducts.innerHTML = sessionStorage.getItem('products');
+}
+
+saveProducts()
+
+/* Contact form Validation */
