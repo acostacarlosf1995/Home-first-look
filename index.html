@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous">
+    <!-- Swiper -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <!-- Styles -->
     <link rel="stylesheet" href="/styles/header.css">
     <title>Corebiz</title>
@@ -50,19 +53,43 @@
             </div>
         </header>
         <main>
-            <ul>
-                <li>Product 1</li>
-                <li>Product 2</li>
-                <li>Product 3</li>
-                <li>Product 4</li>
-            </ul>
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <div class="swiper-slide">
+                        <img src="/img/Screenshot_5.png" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="/img/Screenshot_5.png" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="/img/Screenshot_5.png" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="/img/Screenshot_5.png" alt="">
+                    </div>
+                </div>
+
+                <div class="swiper-pagination swiper-pagination-custom"></div>
+            </div>
         </main>
         <footer>
-            <button>ENTRE EM CONTATO</button>
-            <button>FALE COM O NOSSO <br>CONSULTOR ONLINE</button>
         </footer>
     </div>
 
+    <!-- Scripts -->
     <script src="/javascripts/scripts.js"></script>
+    <!-- Swiper -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            spaceBetween: 30,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true
+            },
+        });
+    </script>
 </body>
 </html>
