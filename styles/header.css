@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;600;700;900&display=swap');
 @import url(/styles/main.css);
 @import url(/styles/footer.css);
 
@@ -92,6 +92,7 @@ header {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    cursor: pointer;
 }
 
 .cart-container {
@@ -102,8 +103,8 @@ header {
 }
 
 .cart-container .cart-number {
-    width: 12px;
-    height: 12px;
+    width: 14px;
+    height: 14px;
     display: flex;
     justify-content: center;
     align-items: center;

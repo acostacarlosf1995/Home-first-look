@@ -13,6 +13,110 @@
     height: 100%;
 }
 
+/* Mais Vendidos */
+
+.container-sales-txt {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.margin-sales-txt {
+    width: 820px;
+}
+
+.sales-txt {
+    font-size: 15px;
+    font-weight: 900;
+    margin: 0;
+}
+
+.line-txt {
+    position: absolute;
+}
+
+/* Product Slider */
+
+.product-slider-container {
+    width: 100%;
+    margin-top: 12px;
+    height: 260px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.products-container {
+    width: 800px;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.products {
+    width: 160px;
+    height: 260px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+
+.products:hover {
+    background-color: #E6E8EA;
+}
+
+.image-product {
+    width: 100%;
+    height: 54%;
+    margin-bottom: 6px;
+}
+
+.title-product-txt {
+    font-size: 9px;
+    font-weight: 600;
+    color: #7A7A7A;
+    margin: 0;
+}
+
+.fa-star {
+    font-size: 9px;
+    color: #F8475F;
+}
+
+.price {
+    font-size: 13px;
+    font-weight: 700;
+    margin: 0;
+    margin-top: 16px;
+}
+
+.quantity {
+    font-size: 7px;
+    color: #7A7A7A;
+    margin: 0;
+}
+
+.btn-buy {
+    width: 90px;
+    height: 26px;
+    font-size: 8px;
+    border-radius: 3px;
+    background-color: black;
+    color: white;
+    margin-top: 5px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    display: none;
+}
+
+.products:hover > .btn-buy {
+    display: block;
+}
+
 @media screen and (max-width: 700px) {
     /* Banner */
 
