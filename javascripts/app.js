@@ -57,3 +57,35 @@ const saveProducts = () => {
 saveProducts()
 
 /* Contact form Validation */
+
+let inputName = document.querySelector('.input-name');
+let inputEmail = document.querySelector('.input-email');
+let inputBtn = document.querySelector('.btn-send-info');
+
+inputBtn.addEventListener('click', (e) => {
+
+    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(inputEmail.value) === true && inputName.value.length > 0) {
+        document.querySelector('.input-name').style.border = 'none';
+        document.querySelector('.name-wrong').style.display = 'none';
+        document.querySelector('.input-email').style.border = 'none';
+        document.querySelector('.email-wrong').style.display = 'none';   
+
+        fetch('https://corebiz-test.herokuapp.com/api/v1/newsletter', {
+            method: 'POST',
+            body: JSON.stringify({
+                "email": "carlos@gmail.com",
+                "name": "Carlos"
+            }),
+        }).then(response => {
+            console.log(response.status)
+            return response.json();
+        })
+
+    } else {
+        document.querySelector('.input-name').style.border = '1px solid red';
+        document.querySelector('.name-wrong').style.display = 'flex';
+        document.querySelector('.input-email').style.border = '1px solid red';
+        document.querySelector('.email-wrong').style.display = 'flex';
+        document.querySelector('.btn-send-info').style.backgroundColor = '#333333';
+    }
+})
