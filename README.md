@@ -18,4 +18,3 @@ Para instalar el proyecto es super sencillo debido a que utilice JavaScript puro
 * Clona el repo
 * Instala Live Server en tu IDE favorito (Visual Studio es mi favorito)
 * Corre Live Server y eso es todo!! Facil no?
-
