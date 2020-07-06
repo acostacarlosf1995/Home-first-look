@@ -62,19 +62,21 @@ let inputName = document.querySelector('.input-name');
 let inputEmail = document.querySelector('.input-email');
 let inputBtn = document.querySelector('.btn-send-info');
 
-inputBtn.addEventListener('click', (e) => {
+inputBtn.addEventListener('click', () => {
 
     if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(inputEmail.value) === true && inputName.value.length > 0) {
         document.querySelector('.input-name').style.border = 'none';
         document.querySelector('.name-wrong').style.display = 'none';
         document.querySelector('.input-email').style.border = 'none';
-        document.querySelector('.email-wrong').style.display = 'none';   
+        document.querySelector('.email-wrong').style.display = 'none';
+        document.querySelector('.container-contact-success').style.display = 'flex';
+        document.querySelector('.contact-form-info').style.display = 'none';
 
         fetch('https://corebiz-test.herokuapp.com/api/v1/newsletter', {
             method: 'POST',
             body: JSON.stringify({
-                "email": "carlos@gmail.com",
-                "name": "Carlos"
+                "email": inputEmail.value,
+                "name": inputName.value,
             }),
         }).then(response => {
             console.log(response.status)
@@ -89,3 +91,16 @@ inputBtn.addEventListener('click', (e) => {
         document.querySelector('.btn-send-info').style.backgroundColor = '#333333';
     }
 })
+
+/* Boton de Ingresar Email Nuevamente */
+
+const resendEmail = () => {
+    document.querySelector('.contact-success-btn').addEventListener('click', () => {
+        document.querySelector('.container-contact-success').style.display = 'none';
+        document.querySelector('.contact-form-info').style.display = 'flex';
+        document.querySelector('.input-name').value = "";
+        document.querySelector('.input-email').value = "";       
+    })
+}
+
+resendEmail()
