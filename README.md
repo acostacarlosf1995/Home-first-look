@@ -1,4 +1,4 @@
-# Test Tecnico para Corebiz Global
+# Corebiz Global
 En este proyecto utilice basicamente JavaScript, HTML y CSS. Es basico pero con un diseño elegante. Utilizo Fetch para pegarle a los End Points correspondientes, renderizarlos y crear un escaparate de productos. Utilizo librerias como Swiper para crear Banners lindos y super intuitivos. Un formulario con validacion de email y otras cosas. 
 
 ## Contenido
